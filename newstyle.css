@@ -1,0 +1,137 @@
+._dash-undo-redo {
+  display: none;
+}
+
+body {
+  font-family: sans-serif;
+  color: green;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  color: blue;
+}
+/*Mother of all Divs, The div that wraps around everything*/
+#moad {
+
+}
+
+/*graphs*/
+
+#main_ma_graph {
+  margin-top: 5px;
+}
+
+#bb_graph {
+  margin-top: 5px;
+}
+
+.big_graph {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Sliders*/
+.sliders {
+  width': 88%;
+}
+
+.slid_divs {
+
+}
+
+#slider_ma_div {
+  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  padding-right: 15px;
+  margin-top: 5px;
+
+}
+
+#slider_bb_div {
+  height: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-top: 5px;
+
+}
+
+#slider_rsi_div {
+  height: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-top: 5px;
+}
+
+#rsi_graphs_div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 5px;
+
+}
+
+#rsi_main {
+}
+
+#rsi_graph {
+}
+
+
+
+/*Div and button*/
+#mark_div {
+  color: magenta;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-left: 35px;
+  margin-top: 10px;
+
+}
+
+#mark_stats {
+
+}
+
+#stats_submit {
+  margin-top: 35px;
+  font-size: 15;
+  display: inline-block;
+  float: right;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#submit_widget {
+  margin-top: 25px;
+  font-size: 15;
+  display: inline-block;
+  float: right;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#widget_div {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.widgets {
+  margin-top: 20px;
+  margin-left: 35px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  width: 23%;
+  display: inline-block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#widget1 {
+  background-color: yellow;
+}
+
+#widget2 {
+  background-color: powderblue;
+}
+
+#widget3 {
+  background-color: forestgreen;
+  color: white;
+}
