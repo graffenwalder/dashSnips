@@ -4,20 +4,17 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 from pandas_datareader import data, wb
+from datetime import date
 
+tick = 'NFLX'
 start = '2017-01-01'
-end = '2018-09-20'
+end = date.today()
 
-<<<<<<< HEAD
-df = data.DataReader('NFLX', 'iex', start, end)
-df_name = 'Netflix'
-=======
 tick = tick.upper()
 df = data.DataReader(tick, 'iex', start, end)
->>>>>>> d34252c... removed f string from df
 
 app = dash.Dash()
-app.title=f'MA vs EWMA: {df_name}'
+app.title=f'MA vs EWMA: {tick}'
 
 app.layout = html.Div([
             dcc.Graph(id='main_ma_graph',className='big_graph'),
@@ -40,7 +37,7 @@ app.layout = html.Div([
             ],id='slider_ma_div',className='slid_divs')
 ],id='moad')
 
-app.css.append_css({'external_url': 'https://memakewebsite.com/css/newstyle.css'})
+app.css.append_css({'external_url': 'http://memakewebsite.com/css/newstyle.css'})
 
 @app.callback(Output('main_ma_graph','figure'),
             [Input('slider_ma','value'),
@@ -49,11 +46,11 @@ def update_figure(ma,ewma):
     df['MA'] = df['close'].rolling(window=ma).mean()
     df['EWMA'] = df['close'].ewm(span=ewma).mean()
 
-    data = [go.Scatter(x=df.index,y=df['close'],name=df_name),
+    data = [go.Scatter(x=df.index,y=df['close'],name=tick),
             go.Scatter(x=df.index,y=df['MA'],name=f'{ma} MA'),
             go.Scatter(x=df.index,y=df['EWMA'],name=f'{ewma} EWMA')]
 
-    layout = go.Layout(title=f'MA vs EWMA: {df_name}')
+    layout = go.Layout(title=f'MA vs EWMA: {tick}')
 
     return {'data':data,'layout':layout}
 

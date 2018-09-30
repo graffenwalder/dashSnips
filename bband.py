@@ -4,24 +4,17 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 from pandas_datareader import data, wb
+from datetime import date
 
+tick = 'TSLA'
 start = '2017-01-01'
-end = '2018-09-20'
+end = date.today()
 
-<<<<<<< HEAD
-df = data.DataReader('TSLA', 'iex', start, end)
-df_name = 'TESLA'
-=======
 tick = tick.upper()
-<<<<<<< HEAD
-df = data.DataReader(f'{tick}', 'iex', start, end)
->>>>>>> d6a14df... ticktest
-=======
 df = data.DataReader(tick, 'iex', start, end)
->>>>>>> d34252c... removed f string from df
 
 app = dash.Dash()
-app.title=f'BBands: {df_name}'
+app.title=f'BBands: {tick}'
 
 app.layout = html.Div([
 
@@ -48,7 +41,7 @@ app.layout = html.Div([
 
 
 ],id='moad')
-app.css.append_css({'external_url': 'https://memakewebsite.com/css/newstyle.css'})
+app.css.append_css({'external_url': 'http://memakewebsite.com/css/newstyle.css'})
 
 # Main Graphs
 @app.callback(Output('bb_graph','figure'),
@@ -59,12 +52,12 @@ def update_bands(bbma,bbstd):
     df['Upper'] = df['BBand MA'] + bbstd * df['close'].rolling(window=bbma).std()
     df['Lower'] = df['BBand MA'] - bbstd * df['close'].rolling(window=bbma).std()
 
-    data = [go.Scatter(x=df.index,y=df['close'],name=df_name),
+    data = [go.Scatter(x=df.index,y=df['close'],name=tick),
             go.Scatter(x=df.index,y=df['BBand MA'],name=f'{bbma} MA(BB)'),
             go.Scatter(x=df.index,y=df['Upper'],name='Upper BBand'),
             go.Scatter(x=df.index,y=df['Lower'],name='Lower BBand')]
 
-    layout = go.Layout(title=f'{df_name} BOLLINGER BANDS')
+    layout = go.Layout(title=f'{tick} BOLLINGER BANDS')
 
     return {'data':data,'layout':layout}
 

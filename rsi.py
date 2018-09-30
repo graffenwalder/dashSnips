@@ -4,20 +4,17 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 from pandas_datareader import data, wb
+from datetime import date
 
+tick = 'AAPL'
 start = '2017-01-01'
-end = '2018-09-20'
+end = date.today()
 
-<<<<<<< HEAD
-df = data.DataReader("AAPL", 'iex', start, end)
-df_name = 'AAPL'
-=======
 tick = tick.upper()
 df = data.DataReader(tick, 'iex', start, end)
->>>>>>> d34252c... removed f string from df
 
 app = dash.Dash()
-app.title=f'RSI: {df_name}'
+app.title=f'RSI: {tick}'
 
 app.layout = html.Div([
             html.Div([
@@ -40,16 +37,16 @@ app.layout = html.Div([
             ],id='slider_rsi_div',className='slid_divs'),
 
 ],id='moad')
-app.css.append_css({'external_url': 'https://memakewebsite.com/css/newstyle.css'})
+app.css.append_css({'external_url': 'http://memakewebsite.com/css/newstyle.css'})
 
 # Main Graph
 @app.callback(Output('rsi_main','figure'),
             [Input('rsi_graph', 'relayoutData')])
 def update_main(r_relay):
-    data = [go.Scatter(x=df.index,y=df['close'],name=f'{df_name} RSI')]
+    data = [go.Scatter(x=df.index,y=df['close'],name=f'{tick} RSI')]
 
     if 'xaxis.range[0]' in r_relay:
-        layout = go.Layout(title= f'RSI: {df_name}',
+        layout = go.Layout(title= f'RSI: {tick}',
                 autosize=False,height=400,
                 margin=go.layout.Margin(l=45,r=10,b=23,t=70,pad=4),
                 xaxis=dict(
@@ -60,7 +57,7 @@ def update_main(r_relay):
                     ticks='',
                     showticklabels=False))
     else:
-        layout = go.Layout(title= f'RSI: {df_name}',
+        layout = go.Layout(title= f'RSI: {tick}',
                 autosize=False,height=400,
                 margin=go.layout.Margin(l=45,r=10,b=23,t=70,pad=4),
                 xaxis=dict(
