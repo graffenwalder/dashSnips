@@ -2,7 +2,7 @@
 Random Plotly Dash scripts, mostly TA related
 
 # rsi.py
-RSI plot under mainplot.
+RSI graph under main graph.
 * Adjustable RSI
 * Zoom/Pan on main graph to also zoom on RSI and vice versa
 
