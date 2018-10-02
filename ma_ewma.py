@@ -3,8 +3,12 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
-from pandas_datareader import data, wb
 from datetime import date
+
+#Uncomment two lines below if: ImportError: cannot import name 'is_list_like
+#import pandas as pd
+#pd.core.common.is_list_like = pd.api.types.is_list_like
+from pandas_datareader import data, wb
 
 tick = 'NFLX'
 start = '2017-01-01'

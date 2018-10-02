@@ -1,8 +1,14 @@
 # DashSnips
 Random Plotly Dash scripts, mostly TA related
 
+# kmeans.py
+Compare Kmeans clustering to known labels
+* Adjustable Kmeans cluster
+* Adjustable Centers, Samples, Standard Deviation, and Random State
+* Zoom on either graph to zoom on both graphs
+
 # rsi.py
-RSI graph under main graph.
+RSI plot under mainplot
 * Adjustable RSI
 * Zoom/Pan on main graph to also zoom on RSI and vice versa
 
