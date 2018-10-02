@@ -84,7 +84,8 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
     data = [go.Scatter(x=blob_data[0][:,0],
                         y=blob_data[0][:,1],
                         mode='markers',
-                        marker= dict(color= kmeans.labels_))]
+                        marker= dict(color= kmeans.labels_,
+                                    colorscale='Viridis'))]
 
     if 'xaxis.range[0]' in relay:
         layout = go.Layout(title= 'Kmeans Clustering',
@@ -116,7 +117,8 @@ def update_known(samps,centers,std,randstate,relay):
     data = [go.Scatter(x=blob_data[0][:,0],
                         y=blob_data[0][:,1],
                         mode='markers',
-                        marker= dict(color= blob_data[1]))]
+                        marker= dict(color= blob_data[1],
+                                    colorscale='Viridis'))]
 
 
     if 'xaxis.range[0]' in relay:
