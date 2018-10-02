@@ -3,19 +3,19 @@ Random Plotly Dash scripts, mostly TA related
 
 # kmeans.py
 Compare Kmeans clustering to known labels
-* Adjustable Kmeans cluster
-* Adjustable Centers, Samples, Standard Deviation, and Random State
+* Adjustable Kmeans Clusters
+* Adjustable Centers, Samples, STD, and Random State
 * Zoom on either graph to zoom on both graphs
 
 # rsi.py
-RSI plot under mainplot
+RSI graph under maingraph
 * Adjustable RSI
 * Zoom/Pan on main graph to also zoom on RSI and vice versa
 
 # bband.py
 Bollinger Bands
-* Slider for moving average
-* Slider for standard deviation
+* Slider for MA
+* Slider for STD
 
 # ma_ewma.py
 MA vs EWMA
