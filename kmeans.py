@@ -32,10 +32,10 @@ app.layout = html.Div([
                 html.H3('Set Original'),
                 html.H4('Samples'),
                 dcc.Slider(id='slider_known_samples',className='sliders',
-                            min=50,
-                            max=600,
+                            min=100,
+                            max=950,
                             step=25,
-                            marks={i: f'{i}' for i in range(50,650,50)},
+                            marks={i: f'{i}' for i in range(100,1000,50)},
                             value=300),
 
                 html.H4('Centers'),
@@ -48,10 +48,10 @@ app.layout = html.Div([
 
                 html.H4('Standard Deviation'),
                 dcc.Slider(id='slider_known_std',className='sliders',
-                                min=0.2,
-                                max=8,
-                                step=0.2,
-                                marks={i: f'{i}' for i in range(0,9,1)},
+                                min=0.1,
+                                max=5,
+                                step=0.1,
+                                marks={i: f'{i}' for i in range(0,6,1)},
                                 value=1.8),
 
                 html.H4('Random State'),
@@ -89,6 +89,7 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
 
     if 'xaxis.range[0]' in relay and 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Kmeans Clustering',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
                     autorange=False,
@@ -99,6 +100,7 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
 
     elif 'xaxis.range[0]' in relay:
         layout = go.Layout(title= 'Kmeans Clustering',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
                     autorange=False,
@@ -107,6 +109,7 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
 
     elif 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Kmeans Clustering',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False),
                     yaxis=dict(zeroline=False,
@@ -115,6 +118,7 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
 
     else:
         layout = go.Layout(title= 'Kmeans Clustering',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False),
                     yaxis=dict(zeroline=False))
@@ -139,6 +143,7 @@ def update_known(samps,centers,std,randstate,relay):
 
     if 'xaxis.range[0]' in relay and 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Original (known labes)',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
                     autorange=False,
@@ -149,6 +154,7 @@ def update_known(samps,centers,std,randstate,relay):
 
     elif 'xaxis.range[0]' in relay:
         layout = go.Layout(title= 'Original (known labes)',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
                     autorange=False,
@@ -157,6 +163,7 @@ def update_known(samps,centers,std,randstate,relay):
 
     elif 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Original (known labes)',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False),
                     yaxis=dict(zeroline=False,
@@ -165,6 +172,7 @@ def update_known(samps,centers,std,randstate,relay):
 
     else:
         layout = go.Layout(title= 'Original (known labes)',
+                    hovermode= 'closest',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False),
                     yaxis=dict(zeroline=False))
