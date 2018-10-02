@@ -8,7 +8,7 @@ Compare Kmeans clustering to known labels
 * Zoom on either graph to zoom on both graphs
 
 # rsi.py
-RSI graph under maingraph
+RSI graph under main graph
 * Adjustable RSI
 * Zoom/Pan on main graph to also zoom on RSI and vice versa
 
