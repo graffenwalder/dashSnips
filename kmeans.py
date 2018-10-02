@@ -87,7 +87,7 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
                         marker= dict(color= kmeans.labels_,
                                     colorscale='Viridis'))]
 
-    if 'xaxis.range[0]' in relay:
+    if 'xaxis.range[0]' in relay and 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Kmeans Clustering',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
@@ -96,6 +96,23 @@ def update_kmeans(samps,centers,std,randstate,kcluster,relay):
                     yaxis=dict(zeroline=False,
                     autorange=False,
                     range= [relay['yaxis.range[0]'], relay['yaxis.range[1]']]))
+
+    elif 'xaxis.range[0]' in relay:
+        layout = go.Layout(title= 'Kmeans Clustering',
+                    margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
+                    xaxis=dict(zeroline=False,
+                    autorange=False,
+                    range= [relay['xaxis.range[0]'], relay['xaxis.range[1]']]),
+                    yaxis=dict(zeroline=False))
+
+    elif 'yaxis.range[0]' in relay:
+        layout = go.Layout(title= 'Kmeans Clustering',
+                    margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
+                    xaxis=dict(zeroline=False),
+                    yaxis=dict(zeroline=False,
+                    autorange=False,
+                    range= [relay['yaxis.range[0]'], relay['yaxis.range[1]']]))
+
     else:
         layout = go.Layout(title= 'Kmeans Clustering',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
@@ -120,8 +137,7 @@ def update_known(samps,centers,std,randstate,relay):
                         marker= dict(color= blob_data[1],
                                     colorscale='Viridis'))]
 
-
-    if 'xaxis.range[0]' in relay:
+    if 'xaxis.range[0]' in relay and 'yaxis.range[0]' in relay:
         layout = go.Layout(title= 'Original (known labes)',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False,
@@ -130,6 +146,23 @@ def update_known(samps,centers,std,randstate,relay):
                     yaxis=dict(zeroline=False,
                     autorange=False,
                     range= [relay['yaxis.range[0]'], relay['yaxis.range[1]']]))
+
+    elif 'xaxis.range[0]' in relay:
+        layout = go.Layout(title= 'Original (known labes)',
+                    margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
+                    xaxis=dict(zeroline=False,
+                    autorange=False,
+                    range= [relay['xaxis.range[0]'], relay['xaxis.range[1]']]),
+                    yaxis=dict(zeroline=False))
+
+    elif 'yaxis.range[0]' in relay:
+        layout = go.Layout(title= 'Kmeans Clustering',
+                    margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
+                    xaxis=dict(zeroline=False),
+                    yaxis=dict(zeroline=False,
+                    autorange=False,
+                    range= [relay['yaxis.range[0]'], relay['yaxis.range[1]']]))
+
     else:
         layout = go.Layout(title= 'Original (known labes)',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
