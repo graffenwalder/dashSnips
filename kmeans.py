@@ -7,12 +7,12 @@ from sklearn.datasets import make_blobs
 from sklearn.cluster import KMeans
 
 app = dash.Dash()
-app.title='Kmeans'
+app.title='K-Means Clustering'
 
 app.layout = html.Div([
 
             html.Div([
-            html.H4('Kmeans Clusters'),
+            html.H4('K-Means Clusters'),
             dcc.Slider(id='slider_kmeans_clusters',className='sliders',
                             min=1,
                             max=10,
@@ -156,7 +156,7 @@ def update_known(samps,centers,std,randstate,relay):
                     yaxis=dict(zeroline=False))
 
     elif 'yaxis.range[0]' in relay:
-        layout = go.Layout(title= 'Kmeans Clustering',
+        layout = go.Layout(title= 'Original (known labes)',
                     margin=go.layout.Margin(l=50,r=50,b=50,t=100,pad=4),
                     xaxis=dict(zeroline=False),
                     yaxis=dict(zeroline=False,
