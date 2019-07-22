@@ -65,7 +65,7 @@ app.layout = html.Div([
             ],id='slider_known_div',className='slid_divs'),
 
 ],id='moad')
-app.css.append_css({'external_url': 'http://memakewebsite.com/css/kmeans.css'})
+app.css.append_css({'external_url': 'http://growpi.net/css/kmeans.css'})
 
 @app.callback(Output('kmeans_graph','figure'),
             [Input('slider_known_samples','value'),

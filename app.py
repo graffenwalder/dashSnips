@@ -107,7 +107,7 @@ app.layout = html.Div([
                         interval=5 *60 *1000,# *1000 for seconds, *60 for minutes
                         n_intervals=0)
 ],id='moad')
-app.css.append_css({'external_url': 'http://memakewebsite.com/css/newstyle.css'})
+app.css.append_css({'external_url': 'http://growpi.net/css/newstyle.css'})
 
 # Main Graphs
 @app.callback(Output('main_ma_graph','figure'),
